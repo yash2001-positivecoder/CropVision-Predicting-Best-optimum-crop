@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <title>CropVisison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <script>
+    let la = 0;
+    let lo = 0;
+    function getLocation() {
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+    }
+    getLocation();
+    function showPosition(position){
+      la = position.coords.latitude;
+      lo = position.coords.longitude;
+    }
+
+    function initMap() {
+      const myLatLng = { lat: la, lng: lo};
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: myLatLng,
+        zoom: 14,
+        mapId: "e9fda895e3e0a0b1",
+      });
+      new google.maps.Marker({
+        map,
+        position: myLatLng,
+      });
+    }
+    window.initMap = initMap;
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed navbar-light" id="navbar">
+    <div class="container-fluid px-xl-5">
+      <a class="navbar-brand fs-2 fw-bold text" href="header.html"><img src = "favicon_io/favicon.ico"/>Crop<span style="color: green;">Vision</span></a>
+      <a class="btn btn-success" href="header.html" type="button">Home</a>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="container text-center">
+    <div class="p-5 mb-4 bg-light rounded-5">
+        <h1 class="display-5 fw-bold lh-1 mb-3">The effective solutions for your business</h1>
+        <p class="fs-4">Create a unique and beautiful blog, write your daily adventures, read your favourite blogs, post images, make friends and many more.</p>
+    </div>
+  </div>
+
+  <!-- Main 1 -->
+  <section>
+    <div class="container">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-sm">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-5 fw-bold lh-1">Best Crop</h1>
+          <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+            <img class="rounded-lg-3" src="/images/farm4.jpg" alt="" width="720">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Main 2 -->
+  <section style="background-color: aquamarine;">
+    <div class="container">
+      <div class="p-5 mb-4">
+        <div class="row flex-lg-row align-items-center g-5 py-5">
+          <div class="col-lg-6">
+            <div class="p-5 mb-4">
+              <h1 class="display-5 fw-bold lh-1 mb-3">Your Weather</h1>
+              <p class="col-lg-10 fs-4"><img src = "./images/temp.png" style="height: 32px;">&nbspTemperature: <span id="text1">{{}}</span></p>
+              <p class="col-lg-10 fs-4"><img src = "./images/rain.png" style="height: 32px;">&nbspRainfall: <span id="text2">{{}}</span></p>
+              <p class="col-lg-10 fs-4"><img src = "./images/humidity.png" style="height: 32px;">&nbspHumidity: <span id="text3">{{}}</span></p>
+          </div>
+          </div>
+          <div class="col-10 col-sm-8 col-lg-6">
+            <div id="map" class="rounded-5" style="height: 400px; width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bottom fixed pt-2 mt-2">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 2023 CropVision, Inc</p>
+  </footer>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>

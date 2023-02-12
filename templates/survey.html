@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./static/favicon_io/site.webmanifest">
+    <title>CropVision</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        [data-tab-content] {
+            display: none; 
+        }
+        .active[data-tab-contnt] {
+            display: block;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .tab {
+            cursor: pointer;
+        }
+        .tab .active {
+            cursor: pointer;
+        }
+      </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar fixed navbar-light" id="navbar">
+    <div class="container-fluid px-xl-5">
+      <a class="navbar-brand fs-2 fw-bold text" href="header.html"><img src = "./static/favicon_io/favicon.ico"/>Crop<span style="color: green;">Visison</span></a>
+      <a class="btn btn-success" href="header.html" type="button">Home</a>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-5">
+        <h1 class="display-5 fw-bold lh-1 mb-3">The effective solutions for your business</h1>
+        <p class="fs-4">Fill out this form to predict the best suitable crop that you can grow</p>
+    </div>
+  </div>
+
+  <!-- Form -->
+    <div class="container col-lg-8 py-4">
+        <form class="p-5 mb-4 bg-light rounded-5" method="POST" action="./predict.html">
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+                  <label for="inputCity" class="form-label col-lg-10 fs-4">Your City Name?</label>
+                  <input type="text" class="form-control" name="city" id="inputCity" placeholder="City" required>
+                </div>
+                <div class="col">
+                  <label for="inputState" class="form-label col-lg-10 fs-4">Your State Name?</label>
+                  <select class="form-select" name="state" aria-label="Default select example" id="inputState" required>
+                    <option disabled style="background-color:#aaa; color:#fff" selected>Select State</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madya Pradesh">Madya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Orissa">Orissa</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttaranchal">Uttaranchal</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadeep">Lakshadeep</option>
+                    <option value="Pondicherry">Pondicherry</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="inputMonth"  class="form-label col-lg-10 fs-4">In Which month you want to grow your crop?</label>
+              <select class="form-select" name="month" aria-label="Default select example" id="inputMonth" required>
+                <option value="JAN" selected>JAN</option>
+                <option value="FEB">FEB</option>
+                <option value="MAR">MAR</option>
+                <option value="APR">APR</option>
+                <option value="MAY">MAY</option>
+                <option value="JUN">JUN</option>
+                <option value="JUL">JUL</option>
+                <option value="AUG">AUG</option>
+                <option value="SEP">SEP</option>
+                <option value="OCT">OCT</option>
+                <option value="NOV">NOV</option>
+                <option value="DEC">DEC</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label for="inputSoilType" class="form-label col-lg-10 fs-4">What is the type of your soil?</label>
+                <select class="form-select" name="soil" aria-label="Default select example" id="inputSoilType" required>
+                    <option value="Alluvial soil" selected>Alluvial soil</option>
+                    <option value="Red soil">Red soil</option>
+                    <option value="Black soil">Black soil</option>
+                    <option value="Arid soil">Arid soil</option>
+                    <option value="Laterite soil">Laterite soil</option>
+                    <option value="Saline soil">Saline soil</option>
+                    <option value="Marshy soil">Marshy soil</option>
+                    <option value="Forest soil">Forest soil</option>
+                    <option value="Sub-mountain soil">Sub-mountain soil</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label col-lg-10 fs-4">Have you ever performed any test on your soil?</label>
+                <div class="form-check tab">
+                    <input class="form-check-input tab" type="radio" data-tab-target="#done" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check tab">
+                    <input class="form-check-input active tab" data-tab-target="#notdone" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      No
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="tab-content">
+                    <div id="done" data-tab-content>
+                        <div class="row">
+                            <div class="col">
+                              <label for="inputNitrogen" class="form-label col-lg-10 fs-4">Nitrogen(Kg/Hectare)</label>
+                              <input type="text" name="nitrogen" class="form-control" id="inputNitrogen" placeholder="Nitrogen">
+                            </div>
+                            <div class="col">
+                              <label for="inputPhosphorous" class="form-label col-lg-10 fs-4">Phosphorous(Kg/Hectare)</label>
+                              <input type="text" name="phosphorous" class="form-control" id="inputPhosphorous" placeholder="Phosphorous">
+                            </div>
+                            <div class="col">
+                              <label for="inputPottasium" class="form-label col-lg-10 fs-4">Pottasium(Kg/Hectare)</label>
+                              <input type="text" name="potassium" class="form-control" id="inputPottasium" placeholder="Pottasium">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="notdone" data-tab-content class="active"></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  <!-- Footer -->
+  <footer class="bottom fixed pt-2 mt-2">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">&copy; 2023 CropVision, Inc</p>
+  </footer>
+
+  <script src="./static/js/tabs_script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>
