@@ -1,4 +1,4 @@
-# TRINIT_MONTE_CARLO_THUNDER_ML
+# CropVision-Predicting-Best-optimum-crop
 
 #### Demo Video Drive Link
 https://drive.google.com/drive/folders/117KXfOrnzF3Jvrpy0t9JqNHBoKJnLpKa?usp=sharing
